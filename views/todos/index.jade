@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  h1 タスク管理
+  form(action="/todos",method="post")
+    p 
+      input(type="text",name="txt",placeholder="")
+    p
+      button(type="submit") 追加
+  h2 タスク
+    ul
+      - for (todo of todos) {
+        li= todo.txt
+          form(action=`/todos/${todo.objectId}`,method="post")
+            input(type="hidden",name="_method",value="delete")
+            button(type="submit") 削除
+      - }

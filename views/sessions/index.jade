@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  h1 ログイン
+  form(action="/sessions",method="post")
+    p ユーザID 
+      input(type="text",name="userId",placeholder="ユーザID")
+    p パスワード 
+      input(type="password",name="password",placeholder="")
+    p
+      button(type="submit") ログイン

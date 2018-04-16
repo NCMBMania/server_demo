@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  if user
+    p ようこそ #{user.userName} さん
+  else
+    p
+      a(href="/sessions/") ログイン
+  p
+    a(href="/todos") ログイン後にアクセスできるページ
